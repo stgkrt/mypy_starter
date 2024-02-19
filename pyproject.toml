@@ -1,0 +1,45 @@
+[project]
+name = "mypy-starter"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "stgkrt", email = "taro.stst@gmail.com" }
+]
+dependencies = [
+    "numpy>=1.24.4",
+    "pandas>=2.0.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "mypy_starter:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mypy_starter"]
+
+[tool.mypy.override]
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203, W503"
