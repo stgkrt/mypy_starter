@@ -1,0 +1,2 @@
+def devide_number(number):
+    return number / 2
